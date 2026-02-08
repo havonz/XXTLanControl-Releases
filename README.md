@@ -1,11 +1,11 @@
 # XXTLanControl-Releases
 
 `XXTLanControl-Releases` 是 **XXTLanControl** 的公开发布仓库。  
-本仓库用于发布各版本安装包、Docker 镜像归档与部署说明，不包含完整源码开发历史。
+本仓库用于发布各版本安装包、Docker 镜像归档与部署说明，不包含完整源码。
 
 ## 发布地址
 
-- Release 列表：[https://github.com/havonz/XXTLanControl-Releases/releases](https://github.com/havonz/XXTLanControl-Releases/releases)
+- 各平台发布版本列表：[https://github.com/havonz/XXTLanControl-Releases/releases](https://github.com/havonz/XXTLanControl-Releases/releases)
 
 ## 版本与文件命名
 
@@ -117,4 +117,4 @@ IMAGE=havonz/xxtlancontrol TAG=v202602080606 docker compose up -d
 
 ## 反馈与问题
 
-- Issue：[https://github.com/havonz/XXTLanControl/issues](https://github.com/havonz/XXTLanControl/issues)
+- Issue：[https://github.com/havonz/XXTLanControl-Releases/issues](https://github.com/havonz/XXTLanControl-Releases/issues)
