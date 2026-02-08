@@ -1,14 +1,13 @@
 # XXTLanControl-Releases
 
 `XXTLanControl-Releases` 是 **XXTLanControl** 的公开发布仓库。  
-本仓库仅用于发布各版本安装包、Docker 镜像归档与更新说明，不包含完整源码开发历史。
+本仓库用于发布各版本安装包、Docker 镜像归档与部署说明，不包含完整源码开发历史。
 
-## 下载地址
+## 发布地址
 
-- Release 列表：`https://github.com/havonz/XXTLanControl-Releases/releases`
-- 每个版本都包含多平台产物，请按系统和架构选择下载。
+- Release 列表：[https://github.com/havonz/XXTLanControl-Releases/releases](https://github.com/havonz/XXTLanControl-Releases/releases)
 
-## 版本命名规则
+## 版本与文件命名
 
 - 版本号格式：`vYYYYMMDDHHMM`（例如：`v202602080606`）
 - 常见发布文件：
@@ -19,7 +18,7 @@
 `XXTLanControl-docker-*-linux-amd64.tar`
 `XXTLanControl-docker-*-linux-arm64.tar`
 
-## 安装与部署（按平台）
+## 安装与部署（桌面/服务器）
 
 ## macOS
 
@@ -42,26 +41,80 @@
    `./start-backend.sh`
 3. 访问 `http://<服务器IP>:46990`。
 
-## Docker（离线 tar 包）
+## Docker 部署
+
+## 1) 直接拉取镜像（推荐）
+
+当前同时发布到 Docker Hub 与 GHCR，均提供多架构清单（`amd64` / `arm64`）。
+
+- Docker Hub：`havonz/xxtlancontrol`
+- GHCR：`ghcr.io/havonz/xxtlancontrol`
+
+可用标签：
+
+- `latest`
+- `vYYYYMMDDHHMM`（例如 `v202602080606`）
+
+命令示例（Docker Hub）：
+
+```bash
+docker pull havonz/xxtlancontrol:latest
+docker run -d \
+  --name xxtlancontrol \
+  -p 46990:46990 \
+  -p 31500:31500/udp \
+  -v xxtlancontrol-data:/app/data \
+  --restart unless-stopped \
+  havonz/xxtlancontrol:latest
+```
+
+命令示例（GHCR）：
+
+```bash
+docker pull ghcr.io/havonz/xxtlancontrol:latest
+docker run -d \
+  --name xxtlancontrol \
+  -p 46990:46990 \
+  -p 31500:31500/udp \
+  -v xxtlancontrol-data:/app/data \
+  --restart unless-stopped \
+  ghcr.io/havonz/xxtlancontrol:latest
+```
+
+## 2) 使用 docker-compose
+
+本仓库根目录提供 [docker-compose.yml](docker-compose.yml)，可直接使用：
+
+```bash
+docker compose up -d
+```
+
+默认镜像：`ghcr.io/havonz/xxtlancontrol:latest`。  
+如需切换镜像与标签：
+
+```bash
+IMAGE=havonz/xxtlancontrol TAG=v202602080606 docker compose up -d
+```
+
+## 3) 离线部署（tar 包）
 
 1. 下载与机器架构匹配的 tar 包（`amd64` 或 `arm64`）。  
 2. 导入镜像：
    `docker load -i XXTLanControl-docker-<buildtime>-linux-<arch>.tar`
-3. 运行容器：
-   `docker run -d --name xxtlancontrol -p 46990:46990 -p 31500:31500/udp -v xxtlancontrol-data:/app/data --restart unless-stopped xxtlancontrol:v<version>-<arch>`
+3. 运行容器（按 `docker load` 输出的镜像标签运行即可）。
 
 ## 升级说明
 
-1. 先备份数据目录。  
+1. 先备份数据目录（容器默认挂载到 `/app/data`）。  
 2. 停止旧版本服务或容器。  
-3. 下载并替换为新版本。  
-4. 启动后确认 `http://<host>:46990` 可访问。
+3. 拉取新镜像或下载新安装包。  
+4. 重新启动并确认 `http://<host>:46990` 可访问。
 
 ## 默认端口
 
-- HTTP：`46990`
+- HTTP：`46990/tcp`
 - 设备发现 UDP 监听：`31500/udp`
 
 ## 反馈与问题
 
-- Issue：`https://github.com/havonz/XXTLanControl/issues`
+- Issue：[https://github.com/havonz/XXTLanControl/issues](https://github.com/havonz/XXTLanControl/issues)
