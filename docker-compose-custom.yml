@@ -1,0 +1,18 @@
+services:
+  xxtlancontrol:
+    image: ${IMAGE:-ghcr.io/havonz/xxtlancontrol}:${TAG:-latest}
+    container_name: xxtlancontrol
+    restart: unless-stopped
+    environment:
+      DATA_DIR: /app/data
+      # Must match exposed host UDP port to receive device replies.
+      UDP_LISTEN_PORT: ${UDP_LISTEN_PORT:-31500}
+      # Keep listening port consistent with exposed host HTTP port.
+      HTTP_LISTEN: :${HTTP_PORT:-46990}
+      # Optional public base URL sent to devices (recommended for bridge mode).
+      ADVERTISE_API_URL: ${ADVERTISE_API_URL:-}
+    ports:
+      - "${HTTP_PORT:-46990}:${HTTP_PORT:-46990}"
+      - "${UDP_LISTEN_PORT:-31500}:${UDP_LISTEN_PORT:-31500}/udp"
+    volumes:
+      - ${DATA_DIR_HOST:-./xxtlancontrol-data}:/app/data

@@ -90,10 +90,10 @@ docker compose up -d
 ```
 
 默认镜像：`ghcr.io/havonz/xxtlancontrol:latest`。  
-如需切换镜像与标签：
+如需切换镜像与标签和数据保存路径：
 
 ```bash
-IMAGE=havonz/xxtlancontrol TAG=v202602080606 docker compose up -d
+IMAGE=havonz/xxtlancontrol TAG=v202602080606 DATA_DIR_HOST=./xxtlancontrol-data docker compose up -d
 ```
 
 ## 3) 离线部署（tar 包）

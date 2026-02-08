@@ -3,16 +3,12 @@ services:
     image: ${IMAGE:-ghcr.io/havonz/xxtlancontrol}:${TAG:-latest}
     container_name: xxtlancontrol
     restart: unless-stopped
-    ports:
-      - "46990:46990"
-      - "31500:31500/udp"
+    # Use host networking
+    network_mode: host
     environment:
-      WEB_ROOT: /app/dist
       DATA_DIR: /app/data
-      HTTP_LISTEN: ":46990"
-      UDP_LISTEN_PORT: "31500"
+      UDP_LISTEN_PORT: ${UDP_LISTEN_PORT:-31500}
+      HTTP_LISTEN: :${HTTP_PORT:-46990}
+      ADVERTISE_API_URL: ${ADVERTISE_API_URL:-}
     volumes:
-      - xxtlancontrol-data:/app/data
-
-volumes:
-  xxtlancontrol-data:
+      - ${DATA_DIR_HOST:-./xxtlancontrol-data}:/app/data
