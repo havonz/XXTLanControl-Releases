@@ -3,6 +3,8 @@
 `XXTLanControl-Releases` 是 **XXTLanControl** 的公开发布仓库。  
 本仓库用于发布各版本安装包、Docker 镜像归档与部署说明，不包含完整源码。
 
+![screenshot-002.png](screenshot-002.png)
+
 ## 发布地址
 
 - 各平台发布版本列表：[https://github.com/havonz/XXTLanControl-Releases/releases](https://github.com/havonz/XXTLanControl-Releases/releases)
