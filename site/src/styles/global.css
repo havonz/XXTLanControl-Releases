@@ -65,13 +65,26 @@ body {
 
 body {
   margin: 0;
+  position: relative;
+  isolation: isolate;
   color: var(--ifm-text);
-  background:
-    radial-gradient(circle at 0% 0%, var(--ifm-hero-accent), transparent 38%),
-    linear-gradient(180deg, var(--ifm-page-background-alt), var(--ifm-page-background));
+  background-color: var(--ifm-page-background);
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
     sans-serif, BlinkMacSystemFont, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 0% 0%, var(--ifm-hero-accent), transparent 38%),
+    linear-gradient(180deg, var(--ifm-page-background-alt), var(--ifm-page-background));
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100%, 100% 100%;
 }
 
 a {
@@ -100,6 +113,17 @@ a:hover {
     background: var(--ifm-surface);
     border: 1px solid var(--ifm-border);
     box-shadow: var(--ifm-shadow-soft);
+  }
+
+  .screenshot-panel {
+    background: var(--ifm-surface);
+    border: 1px solid var(--ifm-border);
+    box-shadow: var(--ifm-shadow-soft);
+  }
+
+  .screenshot-image {
+    border: 1px solid var(--ifm-border);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   }
 
   .hero-title {

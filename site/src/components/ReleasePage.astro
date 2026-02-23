@@ -20,6 +20,7 @@ const text = isZh
       languageEn: 'English',
       downloadTitle: '最新版下载',
       downloadSubtitle: '按系统选择安装包',
+      screenshotAlt: 'XXTLanControl 界面截图',
       fileLabel: '文件名',
       sizeLabel: '文件大小',
       shaLabel: 'SHA256',
@@ -62,6 +63,7 @@ const text = isZh
       languageEn: 'English',
       downloadTitle: 'Latest Downloads',
       downloadSubtitle: 'Choose your package by platform.',
+      screenshotAlt: 'XXTLanControl interface screenshot',
       fileLabel: 'File Name',
       sizeLabel: 'Size',
       shaLabel: 'SHA256',
@@ -169,6 +171,18 @@ const formatBytes = (value) => {
           </article>
         </div>
       </div>
+    </section>
+
+    <section class="mb-10">
+      <figure class="screenshot-panel rounded-3xl p-2 sm:p-3">
+        <img
+          src={withBase('screenshot-002.png')}
+          alt={text.screenshotAlt}
+          loading="lazy"
+          decoding="async"
+          class="screenshot-image block w-full rounded-2xl"
+        />
+      </figure>
     </section>
 
     <section class="mb-10">
