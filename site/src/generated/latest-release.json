@@ -1,0 +1,40 @@
+{
+  "version": "v202602211712",
+  "publishedAt": "2026-02-21T17:23:27Z",
+  "releaseUrl": "https://github.com/havonz/XXTLanControl-Releases/releases/tag/v202602211712",
+  "historyUrl": "https://github.com/havonz/XXTLanControl-Releases/releases",
+  "checksumsUrl": "https://github.com/havonz/XXTLanControl-Releases/releases/download/v202602211712/checksums.txt",
+  "assets": [
+    {
+      "platform": "macOS",
+      "name": "XXTLanControl-macos-v202602211712.zip",
+      "downloadUrl": "https://github.com/havonz/XXTLanControl-Releases/releases/latest/download/XXTLanControl-macos-v202602211712.zip",
+      "sizeBytes": 27170883,
+      "sha256": "13794ce8c84dfcf4212aec7e48cd0f037c3735b15b33169a87953469aa7e08a1"
+    },
+    {
+      "platform": "Windows",
+      "name": "XXTLanControl-windows-v202602211712.zip",
+      "downloadUrl": "https://github.com/havonz/XXTLanControl-Releases/releases/latest/download/XXTLanControl-windows-v202602211712.zip",
+      "sizeBytes": 14573796,
+      "sha256": "ba78129444573bdc9f4824613c5764e54f4b11c918b19b4a93e09beea447e090"
+    },
+    {
+      "platform": "Linux AMD64",
+      "name": "XXTLanControl-linux-amd64-v202602211712.zip",
+      "downloadUrl": "https://github.com/havonz/XXTLanControl-Releases/releases/latest/download/XXTLanControl-linux-amd64-v202602211712.zip",
+      "sizeBytes": 11729492,
+      "sha256": "3621cdec0a595b72fd3909812fe5ce461685335e7be4142ae2546fae838a9f7f"
+    },
+    {
+      "platform": "Linux ARM64",
+      "name": "XXTLanControl-linux-arm64-v202602211712.zip",
+      "downloadUrl": "https://github.com/havonz/XXTLanControl-Releases/releases/latest/download/XXTLanControl-linux-arm64-v202602211712.zip",
+      "sizeBytes": 11134101,
+      "sha256": "c596a73f394337f1ff2ba37d8da77b614c2c0aa51817d181902ee2f723af3199"
+    }
+  ],
+  "channel": "stable",
+  "buildTime": "2026-02-21T17:12:37Z",
+  "commit": "f6798b5"
+}
