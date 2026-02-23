@@ -8,9 +8,9 @@ It provides release binaries, Docker image archives, and deployment docs, but no
 
 ![screenshot-002.png](screenshot-002.png)
 
-## 发布地址 / Releases
+## 下载地址 / Releases
 
-- 各平台发布版本列表 / Release list: [https://github.com/havonz/XXTLanControl-Releases/releases](https://github.com/havonz/XXTLanControl-Releases/releases)
+- 下载地址列表 / Releases: [https://github.com/havonz/XXTLanControl-Releases/releases](https://github.com/havonz/XXTLanControl-Releases/releases)
 
 ## 版本与文件命名 / Versioning and Artifact Names
 
