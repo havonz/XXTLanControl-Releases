@@ -68,6 +68,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           RELEASE_REPOSITORY: ${{ github.repository }}
           RELEASE_TAG: ${{ inputs.release_tag }}
+          SITE_URL: https://xxtlc-releases.xxtouch.app
+          BASE_PATH: /
         run: npm run build
 
       - name: Upload Pages artifact
